@@ -1,14 +1,10 @@
 const FILES_TO_CACHE = [
-    '/',
-    '/index.html',
-    '/favorites.html',
-    '/topic.html',
-    '/assets/css/style.css',
-    '/dist/app.bundle.js',
-    '/dist/favorites.bundle.js',
-    '/dist/topic.bundle.js',
-    'https://fonts.googleapis.com/css?family=Istok+Web|Montserrat:800&display=swap',
-    'https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css',
+    './',
+    './index.js',
+    './styles.css',
+    `https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css`,
+    `./icons/icon-192x192.png`,
+    `./icons/icon-512x512.png`
   ];
   
   const PRECACHE = 'precache-v1';
@@ -44,6 +40,13 @@ const FILES_TO_CACHE = [
   });
   
   self.addEventListener('fetch', (event) => {
+
+    //case for anything other than GET requests which are not possible since the app is offline 
+    //and therefore said requests are not cached.
+    if (event.request.method != 'GET'){
+        return;
+    }
+    
     if (event.request.url.startsWith(self.location.origin)) {
       event.respondWith(
         caches.match(event.request).then((cachedResponse) => {
