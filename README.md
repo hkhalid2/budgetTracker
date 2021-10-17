@@ -41,5 +41,5 @@ MIT License
 ## Live Deployement 
 https://obscure-reef-64359.herokuapp.com
 
-### Demo Gif
+### Screenshot
 ![](screenshot.png)
