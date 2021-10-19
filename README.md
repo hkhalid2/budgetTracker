@@ -1,4 +1,4 @@
-# budgetTracker
+# budgetTracker 
 ## Description
 The main motivation for creating this project was to create offline functionality and access for this Budget Tracker app. This application is used primiarily as a budget Tracker for the user which keeps track of money gains and losses over time. Offline and online deposits and expenses are both kept track of in the app. Said app is deployed on heroku and uses MongoDB to store and display data.
 
